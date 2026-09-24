@@ -144,10 +144,10 @@ Skills can be loaded into compatible agent runtime environments (such as Antigra
 
 ```bash
 # Clone the repository
-git clone https://github.com/ibrdot/aiskills.git
+git clone https://github.com/ibrdot/ai-agent-skills.git
 
 # Set your skills directory in your agent configuration
-export AGENT_SKILLS_PATH="./aiskills"
+export AGENT_SKILLS_PATH="./ai-agent-skills"
 ```
 
 ---
