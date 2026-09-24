@@ -9,6 +9,7 @@ A curated collection of modular, production-ready AI agent skills and connector 
 | Skill | Category | Description |
 | :--- | :--- | :--- |
 | [`camoufox-cli`](./camoufox-cli) | **Automation & Web** | Anti-detect browser automation CLI for stealth scraping, form interaction, and bypassing bot detection/fingerprinting. |
+| [`chrome-devtools-mcp`](./chrome-devtools-mcp) | **Automation & Web** | Official Chrome DevTools MCP server & CLI for live browser inspection, performance tracing, network debugging, and puppeteer automation. |
 | [`deep-research`](./deep-research) | **Research & Analysis** | Iterative multi-source deep research framework for competitive analysis, trend investigation, and reports. |
 | [`planning-with-files`](./planning-with-files) | **Task Planning** | File-based planning protocol (`task_plan.md`, `progress.md`, `findings.md`) with automatic session recovery. |
 | [`github`](./github) | **DevOps & Issue Tracking** | GitHub connector for repository management, PR review, issue triage, and CI workflow status. |
