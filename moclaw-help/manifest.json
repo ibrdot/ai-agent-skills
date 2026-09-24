@@ -1,0 +1,11 @@
+{
+  "built_at": "2026-08-13T10:52:08+08:00",
+  "content_hash": "sha256:2f66e237e1d6c254facfe189bb069b1baaad0bf316203147e541b52b5612f4ba",
+  "group": "preinstalled",
+  "install_path": "/opt/kernel/skills/moclaw-help",
+  "name": "moclaw-help",
+  "schema_version": 1,
+  "source": "official/public/skill/moclaw-help/2026.08.13.034737",
+  "type": "skill",
+  "version": "2026.08.13.034737"
+}
