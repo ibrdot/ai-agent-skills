@@ -1,101 +1,168 @@
-# AI Skills Collection
+<div align="center">
 
-A curated collection of modular, production-ready AI agent skills and connector integrations. Each skill is designed to extend LLM and autonomous agent capabilities with tools, structured planning workflows, API connectors, and media generation.
+# 🧠 AI Agent Skills Suite
 
----
+### *Production-ready skills, stealth browser automation, deep research workflows, Google Workspace suite & Chrome DevTools engine.*
 
-## 📦 Skills Directory
+<br/>
 
-| Skill | Category | Description |
-| :--- | :--- | :--- |
-| [`camoufox-cli`](./camoufox-cli) | **Automation & Web** | Anti-detect browser automation CLI for stealth scraping, form interaction, and bypassing bot detection/fingerprinting. |
-| [`chrome-devtools`](./chrome-devtools) | **Automation & Web** | **Dual-Mode** (Direct CLI & MCP Server) live Chrome inspection, performance tracing, network debugging, and puppeteer automation. |
-| [`deep-research`](./deep-research) | **Research & Analysis** | Iterative multi-source deep research framework for competitive analysis, trend investigation, and reports. |
-| [`planning-with-files`](./planning-with-files) | **Task Planning** | File-based planning protocol (`task_plan.md`, `progress.md`, `findings.md`) with automatic session recovery. |
-| [`github`](./github) | **DevOps & Issue Tracking** | GitHub connector for repository management, PR review, issue triage, and CI workflow status. |
-| [`linear`](./linear) | **Project Management** | Linear connector to manage issues, cycles, teams, engineering planning, and ticket updates. |
-| [`sentry`](./sentry) | **Monitoring & Observability** | Sentry MCP connector for error triage, incident investigation, and issue resolution tracking. |
-| [`notion`](./notion) | **Productivity & Docs** | Notion MCP connector for reading, creating, and updating Notion pages, blocks, and databases. |
-| [`mcp-hub`](./mcp-hub) | **Integrations** | Dynamic discovery and execution proxy for user-configured Model Context Protocol (MCP) servers. |
-| [`pptx-native`](./pptx-native) | **Presentation** | Native editable PowerPoint deck creation and element-level manipulation (shapes, tables, charts, text). |
-| [`pptx`](./pptx) | **Presentation** | Image-backed and raster PowerPoint presentation generator using AI vision models. |
-| [`remotion`](./remotion) | **Media & Video** | React-based programmatic video generation, animation, captions, audio, and rendering best practices. |
-| [`video-frames`](./video-frames) | **Media & Video** | FFmpeg-based video extraction tool for grabbing still frames and short clips. |
-| [`gifgrep`](./gifgrep) | **Media & Video** | Search GIF providers via CLI/TUI, download animations, and extract individual frames/sheets. |
-| [`weather`](./weather) | **Utilities** | Current weather conditions and forecasts via wttr.in and Open-Meteo (no API keys required). |
-| [`moclaw-help`](./moclaw-help) | **Knowledge Base** | Product reference, architecture guides, and troubleshooting documentation for MoClaw runtime. |
+[![GitHub Stars](https://img.shields.io/github/stars/ibrdot/ai-agent-skills?style=for-the-badge&color=ffd700&logo=github)](https://github.com/ibrdot/ai-agent-skills/stargazers)
+[![Repo Size](https://img.shields.io/github/repo-size/ibrdot/ai-agent-skills?style=for-the-badge&color=4169e1&logo=files)](https://github.com/ibrdot/ai-agent-skills)
+[![License: MIT](https://img.shields.io/badge/License-MIT-success?style=for-the-badge&color=2ea44f)](LICENSE)
+[![Dual Mode](https://img.shields.io/badge/Mode-CLI%20%2B%20MCP-blueviolet?style=for-the-badge&logo=fastapi)](https://github.com/ibrdot/ai-agent-skills)
+[![Compatibility](https://img.shields.io/badge/Compatible%20With-Antigravity%20|%20Claude%20|%20Cursor-orange?style=for-the-badge&logo=openai)](https://github.com/ibrdot/ai-agent-skills)
+
+<br/>
+
+[✨ Features](#-key-highlights) • [📦 Skills Catalog](#-skills-catalog) • [🌐 Google Workspace](#-google-workspace-gws-suite) • [🔍 Chrome DevTools](#-chrome-devtools-for-agents-dual-mode) • [🚀 Quick Start](#-quick-start--installation)
 
 ---
 
-### 🌐 Google Workspace (GWS) Suite
+</div>
 
-A complete set of tools for interacting with Google Workspace services:
+## 🌟 Key Highlights
 
-| Skill | Description |
-| :--- | :--- |
-| [`gws-shared`](./gws-shared) | Core authentication patterns, global CLI flags, and output formatters for all GWS skills. |
-| [`gws-gmail`](./gws-gmail) | Send, search, read, draft, and organize emails and threads. |
-| [`gws-calendar`](./gws-calendar) | Create, update, search, and manage Google Calendar events and schedules. |
-| [`gws-drive`](./gws-drive) | Upload, download, search, share, and organize files and Google Drive folders. |
-| [`gws-docs`](./gws-docs) | Read, write, format, and manipulate Google Docs documents. |
-| [`gws-sheets`](./gws-sheets) | Read, write, formula evaluate, and structure Google Sheets spreadsheets. |
-| [`gws-slides`](./gws-slides) | Inspect, create, and modify Google Slides presentations. |
-| [`gws-tasks`](./gws-tasks) | Manage Google Tasks task lists, items, and due dates. |
+> [!TIP]
+> **Zero Configuration Required**: All skills work directly via your agent's terminal execution (**Standalone CLI & Script Mode**) with no extra server setup required, or seamlessly as **MCP Servers** when configured.
+
+- 🛡️ **Anti-Detect Browser Automation** (`camoufox-cli`): Built-in C++ fingerprint spoofing to bypass Cloudflare, bot protections, and captchas.
+- 🔍 **Live Chrome DevTools Engine** (`chrome-devtools`): Full Puppeteer automation, live console traces, network interception, and Core Web Vitals profiling.
+- 🧠 **Manus-Style Working Memory** (`planning-with-files`): File-backed persistent planning (`task_plan.md`, `progress.md`, `findings.md`) with automatic session restoration.
+- 🔬 **Recursive Deep Research** (`deep-research`): Multi-source intelligence gathering, competitive analysis, and automated report synthesis.
+- 🎬 **Programmatic Video & Motion** (`remotion`, `video-frames`): React-based video generation, automated subtitling, and FFmpeg frame extraction.
+- 📊 **Enterprise Presentation Engine** (`pptx-native`, `pptx`): Native element-level editable PowerPoint authoring and AI vision slide generator.
+- ☁️ **Full Google Workspace Suite** (`gws-*`): End-to-end management for Gmail, Drive, Docs, Sheets, Calendar, Slides, and Tasks.
 
 ---
 
-## 🔍 Chrome DevTools for Agents (`chrome-devtools`)
+## 🏛️ Architecture Overview
 
-The repository includes the complete **Chrome DevTools suite** (`./chrome-devtools`), which works in **two flexible modes**:
-1. **⚡ Direct CLI & Skill Mode (Works Without MCP)**: AI agents can execute browser tasks directly via terminal commands and standalone skill scripts with zero setup required.
-2. **🔌 MCP Server Mode**: Connects as a standard Model Context Protocol (MCP) server if your agent supports conversational tool-calling.
+```mermaid
+flowchart TD
+    subgraph AgentRuntime["🤖 AI Agent Runtime (Antigravity / Claude / Cursor / CLI)"]
+        direction TB
+        Agent["AI Assistant Core"] --> Router["Skill & Intent Router"]
+    end
 
-### 🌟 Key Capabilities & Features
+    Router --> WebAuto["🌐 Web & Automation"]
+    Router --> PlanMem["🧠 Memory & Research"]
+    Router --> GWS["☁️ Google Workspace Suite"]
+    Router --> MediaDev["🎬 Media & Presentation"]
+    Router --> OpsDev["🛠️ DevOps & Observability"]
 
-- **Automated Browser Control**: Full Puppeteer-backed automation enabling agents to navigate, type, click, fill inputs, capture screenshots, and await page mutations with deterministic reliability.
-- **Deep Console & Network Diagnostics**:
-  - Live console message capture with automatic source-mapped stack traces for instant root-cause identification.
-  - Granular HTTP/WebSocket request inspection, request blocking, latency simulation, and payload verification.
-- **Performance Profiling & Core Web Vitals**:
-  - Record performance traces using Chrome DevTools' native tracing engine.
-  - Automatically analyze Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP).
-  - Integration with the Chrome User Experience Report (CrUX) for comparing field data with lab metrics.
-- **Memory Leak & Heap Analysis**:
-  - Capture and compare V8 Heap snapshots directly from running sessions.
-  - Pinpoint memory leaks, detached DOM trees, and uncollected closures.
-- **DOM & Accessibility (A11y)**:
-  - Accessibility tree traversal, color contrast checks, and ARIA attribute validation.
-  - Semantic DOM tree snapshotting with actionable element reference handles (`@e1`, `@e2`).
+    subgraph WebAuto["Automation & Scraping"]
+        camoufox["camoufox-cli (Anti-Detect)"]
+        devtools["chrome-devtools (Puppeteer & Traces)"]
+    end
 
-### 🧩 Included DevTools Specialist Skills
+    subgraph PlanMem["Planning & Intelligence"]
+        planning["planning-with-files (Manus Protocol)"]
+        research["deep-research (Iterative Synthesis)"]
+    end
 
-Located under [`chrome-devtools/skills`](./chrome-devtools/skills):
+    subgraph GWS["Google Workspace"]
+        gws["Gmail • Drive • Docs • Sheets • Calendar • Slides • Tasks"]
+    end
 
-| Specialist Skill | Focus Area |
-| :--- | :--- |
-| [`a11y-debugging`](./chrome-devtools/skills/a11y-debugging) | Automated accessibility audits, WCAG checks, and ARIA diagnostics. |
-| [`chrome-devtools`](./chrome-devtools/skills/chrome-devtools) | Model Context Protocol integration for conversational browser interaction. |
-| [`chrome-devtools-cli`](./chrome-devtools/skills/chrome-devtools-cli) | Terminal-first browser control workflows without protocol overhead. |
-| [`cookie-debugging`](./chrome-devtools/skills/cookie-debugging) | Cookie lifecycle inspection, SameSite/Secure flag validation, and session auth debugging. |
-| [`debug-optimize-lcp`](./chrome-devtools/skills/debug-optimize-lcp) | Automated analysis and step-by-step optimization strategies for Largest Contentful Paint. |
-| [`memory-leak-debugging`](./chrome-devtools/skills/memory-leak-debugging) | Heap snapshot comparison and detached DOM node leak remediation. |
-| [`troubleshooting`](./chrome-devtools/skills/troubleshooting) | Diagnostic guides and automated recovery patterns for agent-browser sessions. |
+    subgraph MediaDev["Media Generation"]
+        remotion["remotion (React Video)"]
+        pptx["pptx-native (OfficeCLI)"]
+        frames["video-frames & gifgrep"]
+    end
 
-### 🚀 How to Use
+    subgraph OpsDev["DevOps & MCP"]
+        github["github • linear • sentry • notion"]
+        mcphub["mcp-hub (Dynamic Proxy)"]
+    end
+```
 
-#### Option 1: Standalone CLI (No MCP Setup Needed)
-Run directly from terminal or let your agent execute commands:
+---
+
+## 📦 Skills Catalog
+
+| Skill | Category | Capabilities & Trigger Context | Mode |
+| :--- | :--- | :--- | :---: |
+| [`camoufox-cli`](./camoufox-cli) | **Web & Stealth** | Anti-detect Firefox browser automation, bypassing Cloudflare/Bot detection, DOM snapshotting. | `CLI` |
+| [`chrome-devtools`](./chrome-devtools) | **Web & DevTools** | Live Chrome automation, performance tracing, network interception, heap inspection, and debugging. | `CLI + MCP` |
+| [`deep-research`](./deep-research) | **Research** | Iterative multi-source deep research, competitive intelligence, and structured research reports. | `Skill` |
+| [`planning-with-files`](./planning-with-files) | **Task Planning** | Manus-style file-based planning (`task_plan.md`, `progress.md`) with automatic session recovery. | `Skill` |
+| [`github`](./github) | **DevOps** | Repository management, PR review workflows, issue triage, and CI failure debugging. | `Connector` |
+| [`linear`](./linear) | **Project Mgmt** | Issue tracking, cycles, team boards, roadmaps, and automated ticket synchronization. | `Connector` |
+| [`sentry`](./sentry) | **Observability** | Exception investigation, crash triage, issue resolution tracking, and incident summaries. | `MCP` |
+| [`notion`](./notion) | **Productivity** | Read, create, and update Notion workspace pages, nested blocks, notes, and databases. | `MCP` |
+| [`mcp-hub`](./mcp-hub) | **Integrations** | Dynamic discovery and execution proxy for user-configured remote MCP servers. | `MCP` |
+| [`pptx-native`](./pptx-native) | **Presentation** | Native editable PowerPoint deck creation via OfficeCLI (shapes, text, animations, tables). | `Skill` |
+| [`pptx`](./pptx) | **Presentation** | AI image-backed raster slide deck generator using vision models packaged to PPTX. | `Skill` |
+| [`remotion`](./remotion) | **Media & Video** | React-based programmatic video generation, transitions, dynamic captions, and motion graphics. | `Skill` |
+| [`video-frames`](./video-frames) | **Media & Video** | FFmpeg-based still frame extraction, scene detection, and short clip clipping. | `CLI` |
+| [`gifgrep`](./gifgrep) | **Media & Video** | Search GIF providers via CLI/TUI, download animations, and extract frame sequences. | `CLI` |
+| [`weather`](./weather) | **Utilities** | Current weather conditions and multi-day forecasts via wttr.in and Open-Meteo. | `CLI` |
+| [`moclaw-help`](./moclaw-help) | **Knowledge Base** | In-depth MoClaw product documentation, troubleshooting manuals, and runtime reference. | `Docs` |
+
+---
+
+## 🌐 Google Workspace (GWS) Suite
+
+Comprehensive enterprise integration tools covering the entire Google productivity ecosystem:
+
+<div align="center">
+
+| Service | Skill | Key Capabilities |
+| :---: | :--- | :--- |
+| ✉️ | [`gws-gmail`](./gws-gmail) | Send, search, parse attachments, read email threads, and manage drafts. |
+| 📅 | [`gws-calendar`](./gws-calendar) | Create events, check calendar availability, reschedule, and manage invites. |
+| 📁 | [`gws-drive`](./gws-drive) | File upload/download, shared drive management, folder structures, and permissions. |
+| 📝 | [`gws-docs`](./gws-docs) | Read, write, format markdown to Google Docs, and modify document trees. |
+| 📊 | [`gws-sheets`](./gws-sheets) | Read/write cell ranges, formula calculation, data extraction, and sheet formatting. |
+| 📽️ | [`gws-slides`](./gws-slides) | Generate, restyle, inspect, and update presentation slide decks. |
+| ✅ | [`gws-tasks`](./gws-tasks) | Manage task lists, set deadlines, mark items completed, and track progress. |
+| 🔑 | [`gws-shared`](./gws-shared) | Unified OAuth patterns, authentication tokens, global CLI flags, and output formats. |
+
+</div>
+
+---
+
+## 🔍 Chrome DevTools for Agents (Dual-Mode)
+
+The [`chrome-devtools`](./chrome-devtools) suite provides deep browser instrumentation for AI agents.
+
+```
+                           ┌──► Standalone CLI Mode (Terminal / Zero Setup)
+[ Chrome DevTools Suite ] ─┤
+                           └──► MCP Server Mode (Tool-calling in Claude / Cursor)
+```
+
+### 🌟 Key Capabilities
+- **Automated Puppeteer Control**: Seamlessly open URLs, click, input text, select options, and await DOM readiness.
+- **Console & Network Traces**: Real-time console logs with source-mapped stack traces; network payload inspection and request blocking.
+- **Core Web Vitals & Tracing**: Record live performance traces, measuring **LCP**, **CLS**, and **INP** with Google CrUX field data integration.
+- **V8 Heap Snapshots & Leak Detection**: Compare memory snapshots to isolate detached DOM nodes and memory leaks.
+
+### 🧩 7 Built-In DevTools Specialist Skills
+
+```
+chrome-devtools/skills/
+├── a11y-debugging/          # WCAG compliance, ARIA diagnostics, contrast audits
+├── chrome-devtools/         # Conversational MCP server interface
+├── chrome-devtools-cli/     # Terminal-first browser control workflows
+├── cookie-debugging/        # Cookie lifecycle, SameSite/Secure flag validation
+├── debug-optimize-lcp/      # Largest Contentful Paint diagnostics & fixes
+├── memory-leak-debugging/   # V8 heap diffing and detached element cleanup
+└── troubleshooting/         # Automated recovery patterns for agent-browser sessions
+```
+
+### 💻 Quick Usage
+
+#### 1. CLI Mode (Without MCP)
 ```bash
-# Open URL and inspect
+# Open URL and inspect elements
 npx chrome-devtools-mcp open https://example.com
 
-# Snapshot DOM elements
+# Capture interactive snapshot with element IDs (@e1, @e2)
 npx chrome-devtools-mcp snapshot -i
 ```
 
-#### Option 2: MCP Server Mode (Optional)
-Add to your agent's MCP configuration (`mcp.json` or editor settings):
-
+#### 2. MCP Server Configuration (Optional)
 ```json
 {
   "mcpServers": {
@@ -107,52 +174,54 @@ Add to your agent's MCP configuration (`mcp.json` or editor settings):
 }
 ```
 
-*For lightweight headless tasks only, pass `--slim` and `--headless`:*
-```json
-{
-  "mcpServers": {
-    "chrome-devtools": {
-      "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest", "--slim", "--headless"]
-    }
-  }
-}
+---
+
+## 🚀 Quick Start & Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ibrdot/ai-agent-skills.git
+cd ai-agent-skills
 ```
 
-## 🛠️ Skill Anatomy
+### 2. Configure with Your Favorite Agent
 
-Each skill directory follows a standardized schema:
+#### Antigravity / OpenClaw / Custom Agents
+Point your agent environment to the cloned repository path:
+```bash
+export AGENT_SKILLS_PATH="/path/to/ai-agent-skills"
+```
+
+#### Claude Desktop / Cursor / Copilot
+Simply register any MCP skill (e.g. `chrome-devtools`, `sentry`, `notion`) into your `claude_desktop_config.json` or `mcp.json`.
+
+---
+
+## 🛠️ Anatomy of a Skill
+
+Each skill adheres to an open, standardized modular structure:
 
 ```text
 skill-name/
-├── SKILL.md                 # Core instructions, execution rules, and trigger definitions
-├── manifest.json            # Versioning, runtime group, and metadata
-└── runtime-component.json   # Optional runtime configuration and component bindings
-```
-
-### `SKILL.md`
-Contains YAML frontmatter that defines:
-- **`name`**: Unique identifier for the skill.
-- **`description`**: Semantic triggering criteria for AI models to activate the skill when needed.
-- **Detailed Instructions**: Procedural steps, script paths, CLI flags, and reference guides.
-
----
-
-## 🚀 Usage & Integration
-
-Skills can be loaded into compatible agent runtime environments (such as Antigravity, OpenClaw, or custom AI agent frameworks) by pointing to the root directory or placing individual skill folders into your agent's skills path:
-
-```bash
-# Clone the repository
-git clone https://github.com/ibrdot/ai-agent-skills.git
-
-# Set your skills directory in your agent configuration
-export AGENT_SKILLS_PATH="./ai-agent-skills"
+├── SKILL.md                 # YAML frontmatter + model instructions & triggers
+├── manifest.json            # Versioning, runtime group, and tool definitions
+├── runtime-component.json   # Optional container runtime bindings
+├── scripts/                 # Standalone automation scripts (Python, Bash, PowerShell)
+└── references/              # Detailed guides, recipes, and API specifications
 ```
 
 ---
 
-## 👤 Author
+## 👤 Author & Support
 
-- **GitHub**: [@ibrdot](https://github.com/ibrdot)
-- **Contact**: `ibrdot@outlook.com`
+<div align="center">
+
+**Crafted by [@ibrdot](https://github.com/ibrdot)**  
+*Building cutting-edge tools for autonomous AI agents and developer workflows.*
+
+[![GitHub](https://img.shields.io/badge/GitHub-ibrdot-181717?style=for-the-badge&logo=github)](https://github.com/ibrdot)
+[![Email](https://img.shields.io/badge/Email-ibrdot@outlook.com-0078D4?style=for-the-badge&logo=microsoftoutlook)](mailto:ibrdot@outlook.com)
+
+⭐ **If you find this suite useful, please give it a Star on GitHub!**
+
+</div>
