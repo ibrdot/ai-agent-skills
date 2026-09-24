@@ -44,6 +44,68 @@ A complete set of tools for interacting with Google Workspace services:
 
 ---
 
+## 🔍 Chrome DevTools for Agents (`chrome-devtools-mcp`)
+
+The repository includes the full **Chrome DevTools MCP server, CLI, and specialized debugging skills** (`./chrome-devtools-mcp`). It equips AI agents with direct, programmatic control over live Google Chrome browser sessions with industrial-grade inspection tooling.
+
+### 🌟 Key Capabilities & Features
+
+- **Automated Browser Control**: Full Puppeteer-backed automation enabling agents to navigate, type, click, fill inputs, capture screenshots, and await page mutations with deterministic reliability.
+- **Deep Console & Network Diagnostics**:
+  - Live console message capture with automatic source-mapped stack traces for instant root-cause identification.
+  - Granular HTTP/WebSocket request inspection, request blocking, latency simulation, and payload verification.
+- **Performance Profiling & Core Web Vitals**:
+  - Record performance traces using Chrome DevTools' native tracing engine.
+  - Automatically analyze Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP).
+  - Integration with the Chrome User Experience Report (CrUX) for comparing field data with lab metrics.
+- **Memory Leak & Heap Analysis**:
+  - Capture and compare V8 Heap snapshots directly from running sessions.
+  - Pinpoint memory leaks, detached DOM trees, and uncollected closures.
+- **DOM & Accessibility (A11y)**:
+  - Accessibility tree traversal, color contrast checks, and ARIA attribute validation.
+  - Semantic DOM tree snapshotting with actionable element reference handles (`@e1`, `@e2`).
+
+### 🧩 Included DevTools Specialist Skills
+
+Located under [`chrome-devtools-mcp/skills`](./chrome-devtools-mcp/skills):
+
+| Specialist Skill | Focus Area |
+| :--- | :--- |
+| [`a11y-debugging`](./chrome-devtools-mcp/skills/a11y-debugging) | Automated accessibility audits, WCAG checks, and ARIA diagnostics. |
+| [`chrome-devtools`](./chrome-devtools-mcp/skills/chrome-devtools) | Model Context Protocol integration for conversational browser interaction. |
+| [`chrome-devtools-cli`](./chrome-devtools-mcp/skills/chrome-devtools-cli) | Terminal-first browser control workflows without protocol overhead. |
+| [`cookie-debugging`](./chrome-devtools-mcp/skills/cookie-debugging) | Cookie lifecycle inspection, SameSite/Secure flag validation, and session auth debugging. |
+| [`debug-optimize-lcp`](./chrome-devtools-mcp/skills/debug-optimize-lcp) | Automated analysis and step-by-step optimization strategies for Largest Contentful Paint. |
+| [`memory-leak-debugging`](./chrome-devtools-mcp/skills/memory-leak-debugging) | Heap snapshot comparison and detached DOM node leak remediation. |
+| [`troubleshooting`](./chrome-devtools-mcp/skills/troubleshooting) | Diagnostic guides and automated recovery patterns for agent-browser sessions. |
+
+### ⚙️ Quick MCP Setup
+
+Add the server to your agent's MCP configuration (`mcp.json` or editor settings):
+
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
+  }
+}
+```
+
+*For lightweight/headless tasks only, pass `--slim` and `--headless`:*
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--slim", "--headless"]
+    }
+  }
+}
+```
+
 ## 🛠️ Skill Anatomy
 
 Each skill directory follows a standardized schema:
