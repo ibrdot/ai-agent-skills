@@ -1,12 +1,12 @@
 # Chrome DevTools for Agents
 
-Chrome DevTools for agents (`chrome-devtools-mcp`) lets your coding agent (such as Antigravity, Claude, Cursor or Copilot)
-control and inspect a live Chrome browser. It acts as a Model-Context-Protocol
-(MCP) server, giving your AI coding assistant access to the full power of
-Chrome DevTools for reliable automation, in-depth debugging, and performance analysis.
-A [CLI][cli] is also provided for use without MCP.
+**Chrome DevTools for Agents** allows your AI coding assistants (such as Antigravity, Claude, Cursor, Copilot) to inspect, automate, and debug live Google Chrome browser sessions.
 
-[Tool reference][tool-reference] | [Changelog][changelog] | [Contributing][contributing] | [Troubleshooting][troubleshooting] | [Design Principles][design-principles]
+It supports **two operational modes**:
+1. **🚀 Standalone CLI & Skill Mode (No MCP Required)**: Run directly from the terminal or let your agent execute built-in commands/skills with zero configuration.
+2. **🔌 MCP Server Mode**: Connect as a standard Model Context Protocol (MCP) server for native conversational tool integration.
+
+[CLI Reference][cli] | [Tool reference][tool-reference] | [Troubleshooting][troubleshooting] | [Design Principles][design-principles]
 
 ## Key features
 
